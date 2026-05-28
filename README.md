@@ -59,7 +59,7 @@ Simply double-click the **`Play Roofline Dash.bat`** file to launch the game in 
 ### Manual Start
 1. Clone this repository:
    ```bash
-   git clone https://github.com/APPISETTTYHARI/Roofline-Dash-3D-Runner.git
+   git clone https://github.com/APPISETTYHARI/Roofline-Dash-3D-Runner.git
    cd Roofline-Dash-3D-Runner
    ```
 
