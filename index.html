@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Roofline Dash | 3D Runner</title>
+    <!-- Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        window.addEventListener("error", (e) => {
+          const div = document.createElement("div");
+          div.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:9999;background:red;color:white;padding:1em;font-family:monospace;pointer-events:none;";
+          div.textContent = "ERR: " + e.message + " at " + e.filename + ":" + e.lineno;
+          document.body.appendChild(div);
+        });
+    </script>
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+
+        <!-- Dashboard / HUD -->
+        <div id="hud">
+            <div class="hud-corner top-left">
+                <div class="stat-card score-card">
+                    <label>SCORE</label>
+                    <span id="score-val">0</span>
+                </div>
+                <div class="stat-card best-card">
+                    <label>BEST</label>
+                    <span id="best-val">0</span>
+                </div>
+            </div>
+
+            <div class="hud-corner top-right">
+                <div class="stat-card credits-card">
+                    <label>CREDITS</label>
+                    <span id="credits-val">0</span>
+                </div>
+            </div>
+
+            <div class="hud-corner bottom-left">
+                <div class="stat-card multiplier-card">
+                    <label>MULTX</label>
+                    <span id="mult-val">1.0</span>
+                </div>
+            </div>
+
+            <div class="hud-corner bottom-right">
+                <div class="stat-card distance-card">
+                    <label>DIST</label>
+                    <span id="dist-val">0m</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overlays -->
+        <div id="overlay-container">
+            <!-- Start Menu -->
+            <div id="start-menu" class="menu-modal">
+                <div class="menu-inner">
+                    <h1 class="game-title">ROOFLINE DASH</h1>
+                    <p class="game-subtitle">Run the courier route.</p>
+                    
+                    <div class="menu-section">
+                        <h3>PACE</h3>
+                        <div class="mode-select">
+                            <button class="mode-btn active" data-mode="easy">
+                                <strong>EASY</strong>
+                                <span>Chill run</span>
+                            </button>
+                            <button class="mode-btn" data-mode="medium">
+                                <strong>MED</strong>
+                                <span>Balanced</span>
+                            </button>
+                            <button class="mode-btn" data-mode="hard">
+                                <strong>HARD</strong>
+                                <span>Extreme</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-section">
+                        <h3>WARDROBE</h3>
+                        <div class="wardrobe-scroll" id="wardrobe-list">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <div class="controls-hint">
+                        WASD or ARROWS to Move, Jump & Slide
+                    </div>
+
+                    <button id="start-run-btn" class="primary-btn pulse">START RUN</button>
+                </div>
+            </div>
+
+            <!-- Game Over Menu -->
+            <div id="game-over-menu" class="menu-modal hidden">
+                <div class="menu-inner">
+                    <h2 class="death-title">CRASHED!</h2>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <label>Distance</label>
+                            <span id="final-dist">0m</span>
+                        </div>
+                        <div class="result-item">
+                            <label>Credits</label>
+                            <span id="earned-credits">+0</span>
+                        </div>
+                    </div>
+                    <button id="retry-btn" class="primary-btn">RUN IT BACK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Libraries (Local) -->
+    <script src="three.min.js"></script>
+    <script src="GLTFLoader.legacy.js"></script>
+    
+    <!-- Offline Data Bundle -->
+    <script src="assets.js"></script>
+    <!-- Game Logic -->
+    <script src="game.js"></script>
+</body>
+</html>
