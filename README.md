@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="banner.png" alt="Roofline Dash Banner" width="100%"/>
-</p>
-
 <h1 align="center">🏃‍♂️ ROOFLINE DASH — 3D Endless Runner</h1>
 
 <p align="center">
