@@ -8,7 +8,6 @@
   <img src="https://img.shields.io/badge/Built%20With-Three.js-black?style=for-the-badge&logo=three.js&logoColor=white"/>
   <img src="https://img.shields.io/badge/Language-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
   <img src="https://img.shields.io/badge/3D%20Assets-GLTF%20%2F%20GLB-FF6347?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge"/>
 </p>
 
 ---
@@ -140,12 +139,6 @@ Roofline-Dash-3D-Runner/
 ## 📜 Why I Built This
 
 > *"I created this game just to check my skills and have some fun along the way! It was a great exercise in learning Three.js, 3D physics, collision detection, and modern web UI design. Sometimes the best way to learn is to build something cool!"* 🚀
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
